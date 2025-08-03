@@ -36,7 +36,18 @@
     <!-- 主要内容 -->
     <main class="main-content">
         <div class="container">
-            <!-- 思想碎片信息流 -->
+            <!-- 文章分类筛选 -->
+            <section class="filter-section">
+                <div class="filter-tags">
+                    <span class="filter-tag active">全部</span>
+                    <span class="filter-tag">技术洞察</span>
+                    <span class="filter-tag">社会观察</span>
+                    <span class="filter-tag">哲学思辨</span>
+                    <span class="filter-tag">未来想象</span>
+                </div>
+            </section>
+
+            <!-- 思想碎片列表 -->
             <section class="sparks-section">
                 <div class="sparks-grid">
                     
@@ -197,6 +208,36 @@
     </footer>
 
     <style>
+        /* 筛选标签样式 */
+        .filter-section {
+            margin-bottom: 40px;
+        }
+
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .filter-tag {
+            padding: 8px 20px;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .filter-tag:hover,
+        .filter-tag.active {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+
         /* 思想碎片网格样式 */
         .sparks-grid {
             display: grid;

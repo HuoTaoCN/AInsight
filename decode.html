@@ -36,6 +36,16 @@
     <!-- 主要内容 -->
     <main class="main-content">
         <div class="container">
+            <!-- 文章分类筛选 -->
+            <section class="filter-section">
+                <div class="filter-tags">
+                    <span class="filter-tag active" data-category="all">全部</span>
+                    <span class="filter-tag" data-category="basic-concepts">基础概念</span>
+                    <span class="filter-tag" data-category="tech-engines">技术引擎</span>
+                    <span class="filter-tag" data-category="core-concepts">核心概念</span>
+                </div>
+            </section>
+
             <!-- 文章导航 -->
             <section class="articles-navigation">
                 <div class="nav-intro">
@@ -292,5 +302,37 @@
             <p>&copy; 2025 AInsight | 基于 <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GNU GPL v3.0</a> 开源协议 | <a href="about.html">关于我们</a> | <a href="https://github.com/huotaocn/ainsight" target="_blank">GitHub</a></p>
         </div>
     </footer>
+
+    <style>
+        /* 筛选标签样式 */
+        .filter-section {
+            margin-bottom: 40px;
+        }
+
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .filter-tag {
+            padding: 8px 20px;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .filter-tag:hover,
+        .filter-tag.active {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+    </style>
 </body>
 </html>
