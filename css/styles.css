@@ -12,6 +12,16 @@ body {
     background-color: #fafafa;
 }
 
+/* 全局链接样式重置 */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -129,54 +139,74 @@ body {
 /* 精选模块卡片 */
 .featured-modules {
     padding: 80px 0;
-    background: white;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .modules-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.module-card-link {
+    text-decoration: none;
+    color: inherit;
 }
 
 .module-card {
     background: white;
-    border-radius: 12px;
     padding: 40px 30px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #f0f0f0;
 }
 
 .module-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .card-icon {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
+    display: block;
+}
+
+.card-category {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .module-card h3 {
     font-size: 1.5rem;
-    margin-bottom: 15px;
     color: #2c3e50;
-}
-
-.module-card h3 a {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.3s ease;
-}
-
-.module-card h3 a:hover {
-    color: #3498db;
+    margin-bottom: 15px;
+    font-weight: 600;
 }
 
 .module-card p {
     color: #666;
-    line-height: 1.7;
+    line-height: 1.6;
+    font-size: 1rem;
 }
 
 /* 页面标题 */
@@ -393,7 +423,7 @@ body {
 
 .category-title {
     font-size: 1.5rem;
-    color: #3498db;
+    color: #1a1a1a;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 2px solid #f0f0f0;
@@ -491,9 +521,74 @@ body {
 }
 
 .article-type {
-    background: #f3e5f5;
-    color: #7b1fa2;
-    border: 1px solid #ce93d8;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+}
+
+/* 文章页面样式 */
+.article-header {
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 3rem;
+    padding: 3rem 0 2rem;
+    border-bottom: 2px solid #f0f0f0;
+    background: white;
+}
+
+.article-title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    font-weight: 300;
+}
+
+.article-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.article-meta span {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.article-category {
+    background: #3498db;
+    color: white !important;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem !important;
+}
+
+.category-label {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.article-content {
+    background: white;
+    padding: 2rem 0;
 }
 
 /* 页脚 */
@@ -502,6 +597,7 @@ body {
     color: white;
     text-align: center;
     padding: 40px 0;
+    margin-top: 80px;
 }
 
 .footer p {

@@ -297,6 +297,7 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 AInsight | 基于 <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank">GNU GPL v3.0</a> 开源协议 | <a href="about.html">关于我们</a> | <a href="https://github.com/huotaocn/ainsight" target="_blank">GitHub</a></p>
+            <p style="font-size: 0.85em; color: #666; margin-top: 8px;">🤖 本网站内容均由AI生成 | AI-Generated Content</p>
         </div>
     </footer>
 
@@ -330,6 +331,53 @@
             color: white;
             border-color: #3498db;
         }
+
+        /* 隐藏文章类别 */
+        .article-category.hidden {
+            display: none;
+        }
     </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterTags = document.querySelectorAll('.filter-tag');
+            const articleCategories = document.querySelectorAll('.article-category');
+            
+            // 为每个筛选标签添加点击事件
+            filterTags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    // 移除所有标签的active状态
+                    filterTags.forEach(t => t.classList.remove('active'));
+                    // 为当前点击的标签添加active状态
+                    this.classList.add('active');
+                    
+                    const filterType = this.textContent.trim();
+                    
+                    // 显示/隐藏相应的文章类别
+                    articleCategories.forEach(category => {
+                        const categoryTitle = category.querySelector('.category-title').textContent.trim();
+                        
+                        if (filterType === '全部') {
+                            category.classList.remove('hidden');
+                        } else if (filterType === '基础概念' && categoryTitle.includes('基础概念')) {
+                            category.classList.remove('hidden');
+                        } else if (filterType === '技术引擎' && categoryTitle.includes('技术引擎')) {
+                            category.classList.remove('hidden');
+                        } else if (filterType === '核心概念' && categoryTitle.includes('核心概念')) {
+                            category.classList.remove('hidden');
+                        } else {
+                            category.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+            
+            // 默认激活"全部"标签
+            const allTag = document.querySelector('.filter-tag');
+            if (allTag) {
+                allTag.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
